@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="perfil.jpeg">
+<meta name="mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Visita | Pablio</title>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+    sans: ['Montserrat', 'sans-serif'],
+    vip: ['Cinzel', 'serif'],
+},
+
+                    colors: {
+                        gold: {
+                            400: '#E5C558',
+                            500: '#D4AF37', // Premium Gold
+                            600: '#B59226',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 3px;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-reflection {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+        }
+
+        /* Animation Delays */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-700 { animation-delay: 700ms; }
+        .delay-1000 { animation-delay: 1000ms; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-black text-white antialiased min-h-screen overflow-x-hidden flex justify-center py-8 px-4">
+
+    <!-- Background Image with Overlay -->
+    <div class="fixed inset-0 z-0">
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <img src="fundo.jpeg" 
+             alt="Luxury Home Background" 
+             class="w-full h-full object-cover transition-transform duration-[20s] ease-linear scale-100 animate-fade-in"
+             style="animation-duration: 2s;">
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 w-full max-w-sm mx-auto p-4">
+       <div class="glass-panel rounded-2xl overflow-hidden relative border border-[#68D23E] shadow-[0_0_20px_#68D23E]">
+
+            <!-- Glossy Reflection -->
+            <div class="glass-reflection absolute top-0 left-0 w-full h-1/2 pointer-events-none"></div>
+
+            <!-- Profile Section -->
+            <div class="flex flex-col items-center text-center p-6 pb-2 relative z-10">
+                <div class="relative group cursor-pointer mb-4">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                   <img src="logo.png" alt="Pablio" class="relative w-28 h-28 rounded-full border-4 border-[#6B8E23] object-cover">
+
+
+                </div>
+                
+                <h1 class="text-[#68D23E] text-2xl font-bold mb-1">Pablio</h1>
+                <p style="color: white; text-align: center;">
+    VIP JARDIM: NATUREZA DIGITALIZADA, EXCLUSIVIDADE RENOVADA.
+</p>
+                
+                <p class="text-gray-300 text-sm max-w-xs leading-relaxed font-light italic">
+                    
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-2"></div>
+
+            <!-- Action Grid Buttons -->
+           <div class="grid grid-cols-2 gap-4 w-full px-6 py-4">
+    <a href="https://wa.me/85981502544" class="flex flex-col items-center justify-center bg-white/10 backdrop-blur-md border border-[#6B8E23] rounded-2xl py-6 transition-all hover:bg-white/20">
+        <i class="fa-brands fa-whatsapp text-3xl text-[#6B8E23] mb-2"></i>
+        <span class="text-white text-xs font-semibold">WhatsApp</span>
+    </a>
+
+    <a href="https://maps.app.goo.gl/m3RuPSgdFXbbaZRF6" class="flex flex-col items-center justify-center bg-white/10 backdrop-blur-md border border-[#6B8E23] rounded-2xl py-6 transition-all hover:bg-white/20">
+        <i class="fa-solid fa-location-dot text-3xl text-[#6B8E23] mb-2"></i>
+        <span class="text-white text-xs font-semibold">Localização</span>
+    </a>
+
+    <a href="mailto:Pabligael27@gmail.com" class="flex flex-col items-center justify-center bg-white/10 backdrop-blur-md border border-[#6B8E23] rounded-2xl py-6 transition-all hover:bg-white/20">
+        <i class="fa-solid fa-envelope text-3xl text-[#6B8E23] mb-2"></i>
+        <span class="text-white text-xs font-semibold">E-mail</span>
+    </a>
+
+    <a href="SEU_SITE" class="flex flex-col items-center justify-center bg-white/10 backdrop-blur-md border border-[#6B8E23] rounded-2xl py-6 transition-all hover:bg-white/20">
+        <i class="fa-solid fa-globe text-3xl text-[#6B8E23] mb-2"></i>
+        <span class="text-white text-xs font-semibold">Website</span>
+    </a>
+</div>
+
+            <!-- Save Contact Button -->
+            <div class="px-6 py-2 w-full opacity-0 animate-slide-up delay-500">
+                <button onclick="saveContact()" class="w-full relative overflow-hidden group bg-gold-500 text-black font-bold py-4 rounded-xl shadow-lg shadow-gold-500/20 transform transition-all duration-300 hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3">
+                    <div class="absolute inset-0 w-full h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                    <i class="fa-solid fa-user-plus text-lg"></i>
+                    <span class="tracking-wider text-sm uppercase">Salvar na Agenda</span>
+                </button>
+            </div>
+
+</div>
+ </div>
+<a href="https://www.instagram.com/pablio_jardinagem_e_paisagismo/" 
+   target="_blank" 
+   class="w-full max-w-sm mx-auto relative overflow-hidden group flex items-center justify-center bg-[#68D23E] py-4 rounded-xl shadow-lg transition-all active:scale-95">
+    
+    <div class="absolute inset-0 w-full h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+
+    <div class="relative flex items-center justify-center gap-2">
+        <i class="fa-brands fa-instagram text-2xl text-white"></i>
+        <span class="tracking-wider text-sm font-bold uppercase text-white">Ver Instagram</span>
+    </div>
+</a>
+</a>
+  <div id="instagram-qrcode" class="hidden px-6 py-4 w-full animate-fade-in">
+        <div class="bg-white rounded-2xl p-8 flex flex-col items-center shadow-2xl border border-gold-500/20">
+            <h3 class="text-black font-bold text-xl mb-1">Instagram</h3>
+            <p class="text-gray-500 text-sm mb-6 text-center">Aponte a câmera para seguir</p>
+            
+            <img src="pablio_jardinagem_e_paisagismo.jpeg" alt="QR Code" class="w-48 h-48 mb-6 shadow-sm">
+            
+            <p class="text-black font-bold mb-6 italic">@pablio_jardinagem_e_paisagismo
+</p>
+            
+            <button onclick="toggleQRCode()" class="flex items-center gap-2 text-gray-600 border border-gray-300 px-8 py-3 rounded-xl hover:bg-gray-100 transition-all font-medium">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar para o inicio
+            </button>
+        </div>
+    </div>
+
+    <script>
+    function toggleQRCode() {
+        const qrcode = document.getElementById('instagram-qrcode');
+        // Se quiser esconder os botões lá de cima ao abrir o QR Code, 
+        // você pode dar um ID para a div deles e usar o toggle nela também.
+        qrcode.classList.toggle('hidden');
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+    </script>           <!-- Featured Property -->
+            <div class="px-6 py-6 w-full opacity-0 animate-slide-up delay-700">
+                <div class="bg-black/30 rounded-xl overflow-hidden border border-white/10 hover:border-gold-500/30 transition-colors group cursor-pointer">
+                    <div class="px-4 py-2 flex items-center justify-between border-b border-white/5">
+                        <span class="text-xs font-semibold text-gold-500 uppercase tracking-wider flex items-center gap-1">
+                            <i class="fa-solid fa-star text-[10px]"></i>
+                            Solicite seu Orçamento.
+                        </span>
+                    </div>
+                    
+        <div class="relative overflow-hidden rounded-xl">
+
+    <!-- Vídeo -->
+    <video 
+        id="meuVideo"
+        class="w-full h-full object-cover"
+        playsinline
+        webkit-playsinline
+        preload="auto"
+        controls
+        poster="capa.jpg">
+        
+        <source src="video abertura.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
+
+</div>
+
+
+    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+</a>
+        
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-4 pb-8 flex flex-col items-center gap-4 text-center opacity-0 animate-slide-up delay-1000">
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-facebook text-xl"></i>
+                    </a>
+                </div>
+               <p class="text-[10px] text-gray-500 uppercase tracking-widest">
+    © 2026 <a href="https://www.inputcriativo.com.br/" target="_blank" class="hover:text-gold-500 underline">https://www.inputcriativo.com.br/</a> Todos os direitos reservados.
+</p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Logic -->
+    <script>
+        function saveContact() {
+    const vCardData = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Atos Jardim e Paisagismo', // Nome que aparecerá nos contatos
+        'TEL;TYPE=CELL;TYPE=VOICE;TYPE=pref:+5585981502544', // Coloque o número real aqui
+        'URL:https://www.instagram.com/pablio_jardinagem_e_paisagismo',
+        'END:VCARD'
+    ].join('\n');
+
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const newLink = document.createElement('a');
+    newLink.download = 'contato_atos.vcf';
+    newLink.href = url;
+    newLink.click();
+}
+        function saveContact() {
+            // vCard Content
+            const vCardData = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'FN:David',
+                'ORG:LuxEstate',
+                'TITLE:Serviço de jardim e Paisagismo',
+                'TEL;TYPE=CELL:+5585981502544',
+                'EMAIL:Pabligael27@gmail.com',
+                'URL:https://',
+                'END:VCARD'
+            ].join('\n');
+            
+            // Create Blob and Download Link
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Pablio.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Add slow zoom effect to background on load
+        window.addEventListener('load', () => {
+            const bg = document.querySelector('img[alt="Luxury Home Background"]');
+            if(bg) {
+                bg.classList.add('scale-110');
+            }
+        });
+    </script>
+    <script>
+    const video = document.getElementById("meuVideo");
+    const cover = document.getElementById("videoCover");
+
+    cover.addEventListener("click", () => {
+        cover.style.display = "none";
+        video.muted = false;
+        video.play();
+    });
+</script>
+
+</body>
+</html>
+
